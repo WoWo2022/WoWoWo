@@ -42,7 +42,7 @@ Client.on('messageCreate', message => {
 
     if(message.channel.type === 'GUILD_TEXT') {
         if(!message.member.roles.cache.some(role => role.name === "wowo")) {
-            if(/[^woWO]/gm.test(message.content)) {
+            if(/[^woWO ]/gm.test(message.content)) {
                 message.delete();
             }
         }
@@ -51,7 +51,7 @@ Client.on('messageCreate', message => {
 
 Client.on('messageUpdate', (oldMessage, newMessage) => {
     if(!newMessage.member.roles.cache.some(role => role.name === "wowo")) {
-        if(/[^woWO]/gm.test(newMessage.content)) {
+        if(/[^woWO ]/gm.test(newMessage.content)) {
             newMessage.delete();
         }
     }
